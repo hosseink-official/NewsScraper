@@ -2,16 +2,17 @@
 
 from __future__ import annotations
 
+import asyncio
 import json
 import logging
 import os
 import sys
-from urllib.parse import urljoin
 from dataclasses import dataclass, field
 from typing import Any
+from urllib.parse import urljoin
 
 from lxml import html
-from playwright.sync_api import sync_playwright
+from playwright.async_api import async_playwright
 
 
 @dataclass
@@ -58,7 +59,6 @@ class NewsScraper:
         self._setup_logging()
         self._playwright = None
         self._browser = None
-        self._page = None
 
     def _setup_logging(self) -> None:
         self._logger.setLevel(logging.INFO)
@@ -74,11 +74,11 @@ class NewsScraper:
         fh.setFormatter(logging.Formatter("%(asctime)s - %(levelname)s - %(message)s"))
         self._logger.addHandler(fh)
 
-    def _ensure_browser(self):
-        if self._page is not None:
-            return self._page
-        self._playwright = sync_playwright().start()
-        self._browser = self._playwright.chromium.launch(
+    async def _get_browser(self):
+        if self._browser is not None:
+            return self._browser
+        self._playwright = await async_playwright().start()
+        self._browser = await self._playwright.chromium.launch(
             headless=True,
             args=[
                 "--disable-blink-features=AutomationControlled",
@@ -87,7 +87,11 @@ class NewsScraper:
                 "--disable-web-security",
             ],
         )
-        context = self._browser.new_context(
+        return self._browser
+
+    async def _make_page(self):
+        browser = await self._get_browser()
+        context = await browser.new_context(
             user_agent=(
                 "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
                 "AppleWebKit/537.36 (KHTML, like Gecko) "
@@ -105,9 +109,8 @@ class NewsScraper:
                 "Referer": "https://www.google.com/",
             },
         )
-        context.add_init_script(self.STEALTH_SCRIPT)
-        self._page = context.new_page()
-        return self._page
+        await context.add_init_script(self.STEALTH_SCRIPT)
+        return await context.new_page()
 
     def list_configs(self) -> list[str]:
         if not os.path.isdir(self.config_dir):
@@ -124,14 +127,8 @@ class NewsScraper:
             raw = json.load(f)
         return SiteConfig(url=raw["url"], selectors=raw["data"])
 
-    def fetch_page(self, url: str) -> html.HtmlElement:
-        self._logger.info(f"Fetching {url}")
-        page = self._ensure_browser()
-        page.goto(url, wait_until="networkidle", timeout=60000)
-        content = page.content()
-        return html.fromstring(content)
-
-    def _extract_field(self, tree: html.HtmlElement, xpath_expr: str, field_name: str) -> str:
+    @staticmethod
+    def _extract_field(tree: html.HtmlElement, xpath_expr: str, field_name: str) -> str:
         els = tree.xpath(xpath_expr)
         if not els:
             return ""
@@ -141,12 +138,13 @@ class NewsScraper:
             return els[0].get("href", "").strip()
         return els[0].text_content().strip()
 
-    def _extract_font_size_by_xpath(self, xpath: str) -> str:
-        if not xpath or self._page is None:
+    @staticmethod
+    async def _extract_font_size_by_xpath(page, xpath: str) -> str:
+        if not xpath or page is None:
             return ""
         try:
             escaped = xpath.replace("'", "\\'")
-            return self._page.evaluate(f"""() => {{
+            return await page.evaluate(f"""() => {{
                 const el = document.evaluate(
                     '{escaped}', document, null,
                     XPathResult.FIRST_ORDERED_NODE_TYPE, null
@@ -158,14 +156,17 @@ class NewsScraper:
         except Exception:
             return ""
 
-    def _extract_field_list(self, tree: html.HtmlElement, xpath_list: list[str]) -> list[str]:
+    @staticmethod
+    def _extract_field_list(tree: html.HtmlElement, xpath_list: list[str]) -> list[str]:
         return [
             els[0].text_content().strip()
             for xp in xpath_list
             if xp and (els := tree.xpath(xp))
         ]
 
-    def _parse_article(self, tree: html.HtmlElement, selectors: dict[str, Any], idx: int) -> Article:
+    async def _parse_article(
+        self, tree: html.HtmlElement, selectors: dict[str, Any], idx: int, page
+    ) -> Article:
         article = Article(index=idx + 1)
         for field, xpath in selectors.items():
             if not xpath or (isinstance(xpath, list) and not xpath):
@@ -181,11 +182,11 @@ class NewsScraper:
 
         title_xp = selectors.get("title")
         if title_xp and isinstance(title_xp, str):
-            article.title_font_size = self._extract_font_size_by_xpath(title_xp)
+            article.title_font_size = await self._extract_font_size_by_xpath(page, title_xp)
 
         caption_xp = selectors.get("picCaption")
         if caption_xp and isinstance(caption_xp, str):
-            article.pic_caption_font_size = self._extract_font_size_by_xpath(caption_xp)
+            article.pic_caption_font_size = await self._extract_font_size_by_xpath(page, caption_xp)
 
         if not article.link or not article.link.startswith("http"):
             for candidate in ["title", "content_summary", "pic", "main"]:
@@ -205,8 +206,7 @@ class NewsScraper:
                         article.link = "https:" + href
                         break
                     if href.startswith("/"):
-                        from urllib.parse import urljoin
-                        article.link = urljoin(self._page.url, href) if self._page else href
+                        article.link = urljoin(page.url, href) if page else href
                         break
                     if href.startswith("http"):
                         article.link = href
@@ -214,53 +214,55 @@ class NewsScraper:
 
         return article
 
-    def get_data(self, config: SiteConfig) -> list[Article]:
-        tree = self.fetch_page(config.url)
-        articles = [self._parse_article(tree, sel, i) for i, sel in enumerate(config.selectors)]
+    async def get_data(self, config: SiteConfig, page) -> list[Article]:
+        self._logger.info(f"Fetching {config.url}")
+        await page.goto(config.url, wait_until="networkidle", timeout=60000)
+        content = await page.content()
+        tree = html.fromstring(content)
+        articles = [
+            await self._parse_article(tree, sel, i, page)
+            for i, sel in enumerate(config.selectors)
+        ]
         for a in articles:
             a.page_url = config.url
         return articles
 
-    def _fmt_preview(self, text: str, max_len: int = 80) -> str:
+    @staticmethod
+    def _fmt_preview(text: str, max_len: int = 80) -> str:
         return text[:max_len] if text else "N/A"
 
-    def print_report(self, articles: list[Article], url: str) -> None:
+    @staticmethod
+    def print_report(articles: list[Article], url: str) -> None:
         print(f"\n=== {url} ===")
         for a in articles[:5]:
-            print(f"  [{a.index}] {self._fmt_preview(a.title)}")
+            print(f"  [{a.index}] {NewsScraper._fmt_preview(a.title)}")
             if a.content_summary:
-                print(f"       {self._fmt_preview(a.content_summary, 120)}")
+                print(f"       {NewsScraper._fmt_preview(a.content_summary, 120)}")
 
-    def _cleanup(self):
-        if self._page is not None:
-            self._page.close()
-            self._page = None
-        if self._browser is not None:
-            self._browser.close()
-            self._browser = None
-        if self._playwright is not None:
-            self._playwright.stop()
-            self._playwright = None
+    async def _process_one_config(self, name: str) -> None:
+        filepath = os.path.join(self.config_dir, name)
+        try:
+            config = self.load_config(name)
+            page = await self._make_page()
+            try:
+                articles = await self.get_data(config, page)
+                self.print_report(articles, config.url)
+                await self._save_json(articles, name)
+            finally:
+                await page.close()
+        except Exception as e:
+            self._logger.error(f"Failed to scrape {filepath}: {e}")
+            print(f"Failed: {filepath} - {e}")
 
-    def run(self) -> None:
+    async def run(self) -> None:
         configs = self.list_configs()
         self._logger.info(f"Found {len(configs)} config file(s): {configs}")
-
         try:
-            for name in configs:
-                filepath = os.path.join(self.config_dir, name)
-                try:
-                    config = self.load_config(name)
-                    articles = self.get_data(config)
-                    self.print_report(articles, config.url)
-                    self._save_json(articles, name)
-                except Exception as e:
-                    self._logger.error(f"Failed to scrape {filepath}: {e}")
-                    print(f"Failed: {filepath} - {e}")
+            await asyncio.gather(*(self._process_one_config(n) for n in configs))
         finally:
-            self._cleanup()
+            await self._cleanup()
 
-    def _save_json(self, articles: list[Article], config_name: str) -> None:
+    async def _save_json(self, articles: list[Article], config_name: str) -> None:
         os.makedirs(output_path, exist_ok=True)
         base_name = os.path.splitext(config_name)[0]
         timestamp = __import__("datetime").datetime.now().strftime("%Y%m%d_%H%M%S")
@@ -288,7 +290,15 @@ class NewsScraper:
         self._logger.info(f"Saved {len(articles)} articles to {out_file}")
         print(f"Saved: {out_file}")
 
+    async def _cleanup(self):
+        if self._browser is not None:
+            await self._browser.close()
+            self._browser = None
+        if self._playwright is not None:
+            await self._playwright.stop()
+            self._playwright = None
+
 
 if __name__ == "__main__":
     scrapper = NewsScraper()
-    scrapper.run()
+    asyncio.run(scrapper.run())
