@@ -35,7 +35,8 @@ class Article:
 @dataclass
 class SiteConfig:
     url: str
-    selectors: list[dict[str, Any]]
+    selectors: list[dict[str, Any]] | dict[str, Any]
+    list_config: dict[str, Any] | None = None
 
 input_path = sys.argv[1] if len(sys.argv) > 1 else "."
 output_path = sys.argv[2] if len(sys.argv) > 2 else os.path.join('.', 'output')
@@ -125,7 +126,11 @@ class NewsScraper:
         self._logger.info(f"Loading config from {filepath}")
         with open(filepath, encoding="utf-8") as f:
             raw = json.load(f)
-        return SiteConfig(url=raw["url"], selectors=raw["data"])
+        return SiteConfig(
+            url=raw["url"],
+            selectors=raw.get("data", []),
+            list_config=raw.get("list"),
+        )
 
     @staticmethod
     def _extract_field(tree: html.HtmlElement, xpath_expr: str, field_name: str) -> str:
@@ -137,6 +142,25 @@ class NewsScraper:
         if field_name == "link":
             return els[0].get("href", "").strip()
         return els[0].text_content().strip()
+
+    @staticmethod
+    def _extract_field_from_item(item: html.HtmlElement, xpath_expr: str, field_name: str) -> str:
+        els = item.xpath(xpath_expr)
+        if not els:
+            return ""
+        if field_name == "pic":
+            return els[0].get("src", "").strip()
+        if field_name == "link":
+            return els[0].get("href", "").strip()
+        return els[0].text_content().strip()
+
+    @staticmethod
+    def _extract_field_list_from_item(item: html.HtmlElement, xpath_list: list[str]) -> list[str]:
+        return [
+            els[0].text_content().strip()
+            for xp in xpath_list
+            if xp and (els := item.xpath(xp))
+        ]
 
     @staticmethod
     async def _extract_font_size_by_xpath(page, xpath: str) -> str:
@@ -214,17 +238,91 @@ class NewsScraper:
 
         return article
 
+    async def _scroll_to_bottom(self, page, scroll_delay: float = 0.5) -> None:
+        prev_height = -1
+        while True:
+            cur_height = await page.evaluate("document.body.scrollHeight")
+            if cur_height == prev_height:
+                break
+            prev_height = cur_height
+            await page.evaluate("window.scrollTo(0, document.body.scrollHeight)")
+            await page.wait_for_timeout(int(scroll_delay * 1000))
+
+    async def _parse_articles_from_container(
+        self, tree: html.HtmlElement, cfg: dict[str, Any], page, page_url: str
+    ) -> list[Article]:
+        container_xp = cfg["container"]
+        item_xp = cfg.get("item", "./li")
+        fields = cfg["fields"]
+        containers = tree.xpath(container_xp)
+        if not containers:
+            self._logger.warning(f"Container not found: {container_xp}")
+            return []
+        items = []
+        for c in containers:
+            items.extend(c.xpath(item_xp))
+        articles = []
+        for i, item in enumerate(items):
+            article = Article(index=i + 1)
+            for field, xpath in fields.items():
+                if not xpath or (isinstance(xpath, list) and not xpath):
+                    continue
+                try:
+                    if isinstance(xpath, list):
+                        setattr(article, field, self._extract_field_list_from_item(item, xpath))
+                    else:
+                        setattr(article, field, self._extract_field_from_item(item, xpath, field))
+                except Exception:
+                    self._logger.warning(f"Field failed for {field} at index {i}")
+                    setattr(article, field, [] if isinstance(xpath, list) else "")
+            article.page_url = page_url
+            if not article.link or not article.link.startswith("http"):
+                for candidate in ["title", "content_summary", "pic", "main"]:
+                    xp = fields.get(candidate)
+                    if not xp or not isinstance(xp, str):
+                        continue
+                    try:
+                        els = item.xpath(xp)
+                        if not els:
+                            continue
+                        a = els[0].xpath("./ancestor-or-self::a[1]")
+                        if not a:
+                            a = els[0].xpath(".//a[1]")
+                    except Exception:
+                        continue
+                    if a:
+                        href = a[0].get("href", "").strip()
+                        if href.startswith("//"):
+                            article.link = "https:" + href
+                            break
+                        if href.startswith("/"):
+                            article.link = urljoin(page_url, href) if page else href
+                            break
+                        if href.startswith("http"):
+                            article.link = href
+                            break
+            articles.append(article)
+        self._logger.info(f"Found {len(articles)} articles via container discovery")
+        return articles
+
     async def get_data(self, config: SiteConfig, page) -> list[Article]:
         self._logger.info(f"Fetching {config.url}")
         await page.goto(config.url, wait_until="networkidle", timeout=60000)
+        await self._scroll_to_bottom(page)
         content = await page.content()
         tree = html.fromstring(content)
-        articles = [
-            await self._parse_article(tree, sel, i, page)
-            for i, sel in enumerate(config.selectors)
-        ]
-        for a in articles:
+        articles: list[Article] = []
+        for i, sel in enumerate(config.selectors):
+            a = await self._parse_article(tree, sel, i, page)
             a.page_url = config.url
+            articles.append(a)
+        if config.list_config:
+            list_articles = await self._parse_articles_from_container(tree, config.list_config, page, config.url)
+            list_articles = [a for a in list_articles if a.title or a.content_summary or a.main]
+            offset = len(articles)
+            for a in list_articles:
+                a.index = offset + a.index
+            articles.extend(list_articles)
         return articles
 
     @staticmethod
