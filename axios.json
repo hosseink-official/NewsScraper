@@ -9,7 +9,9 @@
             "picCaption":"",
             "author":"",
             "tags":[],
-            "time":""
+            "time":"",
+            "page-location": "header",
+            "manual_weight": 10
         },
         {
             "main": "//*[@id='main-content']/div[1]/div/div/div/div[2]/div[2]/div[1]",
@@ -19,7 +21,9 @@
             "picCaption ":"",
             "author": "",
             "tags": [],
-            "time": ""
+            "time": "",
+            "page-location": "header sub news",
+            "manual_weight": 9
         },
         {
             "main": "//*[@id='main-content']/div[1]/div/div/div/div[2]/div[2]/div[2]",
@@ -29,7 +33,9 @@
             "picCaption ":"",
             "author": "",
             "tags": [""],
-            "time": ""
+            "time": "",
+            "page-location": "header sub news",
+            "manual_weight": 8
         },
         {
             "main": "//*[@id='main-content']/div[1]/div/div/div/div[2]/div[2]/div[3]",
@@ -39,7 +45,9 @@
             "picCaption ":"",
             "author": "",
             "tags": [""],
-            "time": ""
+            "time": "",
+            "page-location": "header sub news",
+            "manual_weight": 7
         },
         {
             "main": "//*[@id='main-content']/div[1]/div/div/div/div[2]/div[2]/div[4]",
@@ -49,7 +57,9 @@
             "picCaption ":"",
             "author": "",
             "tags": [""],
-            "time": ""
+            "time": "",
+            "page-location": "header sub news",
+            "manual_weight": 6
         },
         {
             "main": "//*[@id='main-content']/div[3]/div/div[2]/div/div[2]/div/div/ul/li[1]",
@@ -59,7 +69,9 @@
             "picCaption ":"",
             "author": "",
             "tags": [""],
-            "time": ""
+            "time": "",
+            "page-location": "sidebar",
+            "manual_weight": 5
         },
         {
             "main": "//*[@id='main-content']/div[3]/div/div[2]/div/div[2]/div/div/ul/li[2]",
@@ -69,7 +81,9 @@
             "picCaption ":"",
             "author": "",
             "tags": [""],
-            "time": ""
+            "time": "",
+            "page-location": "sidebar",
+            "manual_weight": 4
         },
         {
             "main": "//*[@id='main-content']/div[3]/div/div[2]/div/div[2]/div/div/ul/li[3]",
@@ -79,7 +93,9 @@
             "picCaption ":"",
             "author": "",
             "tags": [""],
-            "time": ""
+            "time": "",
+            "page-location": "sidebar",
+            "manual_weight": 3
         },
         {
             "main": "//*[@id='main-content']/div[3]/div/div[2]/div/div[2]/div/div/ul/li[4]",
@@ -89,7 +105,9 @@
             "picCaption ":"",
             "author": "",
             "tags": [""],
-            "time": ""
+            "time": "",
+            "page-location": "sidebar",
+            "manual_weight": 2
         },
         {
             "main": "//*[@id='main-content']/div[3]/div/div[2]/div/div[2]/div/div/ul/li[5]",
@@ -99,7 +117,9 @@
             "picCaption ":"",
             "author": "",
             "tags": [""],
-            "time": ""
+            "time": "",
+            "page-location": "sidebar",
+            "manual_weight": 1
         }
     ],
     "list": {
@@ -113,7 +133,9 @@
             "picCaption": "./article/figcaption/p",
             "author": "./article/div[1]/div/div[2]/div/div[1]/ul/li/a/span",
             "tags": ["./article/div[1]/div/div[2]/div/div[2]/span/a"],
-            "time": "./article/div[1]/div/div[2]/div/div[2]/span"
+            "time": "./article/div[1]/div/div[2]/div/div[2]/span",
+            "page-location": "main",
+            "manual_weight": 6
         }
     }
 }

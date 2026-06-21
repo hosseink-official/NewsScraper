@@ -30,6 +30,8 @@ class Article:
     page_url: str = ""
     title_font_size: str = ""
     pic_caption_font_size: str = ""
+    page_location: str = ""
+    manual_weight: int = 0
 
 
 @dataclass
@@ -193,6 +195,12 @@ class NewsScraper:
     ) -> Article:
         article = Article(index=idx + 1)
         for field, xpath in selectors.items():
+            if field == "page-location":
+                article.page_location = xpath if isinstance(xpath, str) else ""
+                continue
+            if field == "manual_weight":
+                article.manual_weight = xpath if isinstance(xpath, (int, float)) else 0
+                continue
             if not xpath or (isinstance(xpath, list) and not xpath):
                 continue
             try:
@@ -265,6 +273,12 @@ class NewsScraper:
         for i, item in enumerate(items):
             article = Article(index=i + 1)
             for field, xpath in fields.items():
+                if field == "page-location":
+                    article.page_location = xpath if isinstance(xpath, str) else ""
+                    continue
+                if field == "manual_weight":
+                    article.manual_weight = xpath if isinstance(xpath, (int, float)) else 0
+                    continue
                 if not xpath or (isinstance(xpath, list) and not xpath):
                     continue
                 try:
@@ -380,6 +394,8 @@ class NewsScraper:
                 "pageUrl": a.page_url,
                 "titleFontSize": a.title_font_size,
                 "picCaptionFontSize": a.pic_caption_font_size,
+                "page-location": a.page_location,
+                "manual_weight": a.manual_weight,
             }
             for a in articles
         ]
