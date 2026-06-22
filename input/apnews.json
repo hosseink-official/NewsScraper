@@ -1,0 +1,82 @@
+{
+  "url": "https://apnews.com/",
+  "wait_until": "load",
+  "data": [
+    {
+      "main": "(//div[contains(concat(' ', normalize-space(@class), ' '), ' PagePromo ')][.//h3[contains(@class, 'PagePromo-title')] and not(ancestor::div[contains(@class, 'HamburgerNavigation')])])[1]",
+      "title": "(//div[contains(concat(' ', normalize-space(@class), ' '), ' PagePromo ')][.//h3[contains(@class, 'PagePromo-title')] and not(ancestor::div[contains(@class, 'HamburgerNavigation')])])[1]//h3[contains(@class, 'PagePromo-title')]/a[contains(@class, 'Link')]/span[contains(@class, 'PagePromoContentIcons-text')]",
+      "content_summary": "(//div[contains(concat(' ', normalize-space(@class), ' '), ' PagePromo ')][.//h3[contains(@class, 'PagePromo-title')] and not(ancestor::div[contains(@class, 'HamburgerNavigation')])])[1]//div[contains(@class, 'PagePromo-description')]/a[contains(@class, 'Link')]/span[contains(@class, 'PagePromoContentIcons-text')]",
+      "pic": "(//div[contains(concat(' ', normalize-space(@class), ' '), ' PagePromo ')][.//h3[contains(@class, 'PagePromo-title')] and not(ancestor::div[contains(@class, 'HamburgerNavigation')])])[1]//div[contains(@class, 'PagePromo-media')]//img[contains(@class, 'Image')]",
+      "picCaption": "",
+      "author": "",
+      "tags": [],
+      "time": "",
+      "page-location": "header",
+      "manual_weight": 10
+    },
+    {
+      "main": "(//div[contains(concat(' ', normalize-space(@class), ' '), ' PagePromo ')][.//h3[contains(@class, 'PagePromo-title')] and not(ancestor::div[contains(@class, 'HamburgerNavigation')])])[2]",
+      "title": "(//div[contains(concat(' ', normalize-space(@class), ' '), ' PagePromo ')][.//h3[contains(@class, 'PagePromo-title')] and not(ancestor::div[contains(@class, 'HamburgerNavigation')])])[2]//h3[contains(@class, 'PagePromo-title')]/a[contains(@class, 'Link')]/span[contains(@class, 'PagePromoContentIcons-text')]",
+      "content_summary": "(//div[contains(concat(' ', normalize-space(@class), ' '), ' PagePromo ')][.//h3[contains(@class, 'PagePromo-title')] and not(ancestor::div[contains(@class, 'HamburgerNavigation')])])[2]//div[contains(@class, 'PagePromo-description')]/a[contains(@class, 'Link')]/span[contains(@class, 'PagePromoContentIcons-text')]",
+      "pic": "(//div[contains(concat(' ', normalize-space(@class), ' '), ' PagePromo ')][.//h3[contains(@class, 'PagePromo-title')] and not(ancestor::div[contains(@class, 'HamburgerNavigation')])])[2]//div[contains(@class, 'PagePromo-media')]//img[contains(@class, 'Image')]",
+      "picCaption": "",
+      "author": "",
+      "tags": [],
+      "time": "",
+      "page-location": "main",
+      "manual_weight": 7
+    },
+    {
+      "main": "(//div[contains(concat(' ', normalize-space(@class), ' '), ' PagePromo ')][.//h3[contains(@class, 'PagePromo-title')] and not(ancestor::div[contains(@class, 'HamburgerNavigation')])])[3]",
+      "title": "(//div[contains(concat(' ', normalize-space(@class), ' '), ' PagePromo ')][.//h3[contains(@class, 'PagePromo-title')] and not(ancestor::div[contains(@class, 'HamburgerNavigation')])])[3]//h3[contains(@class, 'PagePromo-title')]/a[contains(@class, 'Link')]/span[contains(@class, 'PagePromoContentIcons-text')]",
+      "content_summary": "(//div[contains(concat(' ', normalize-space(@class), ' '), ' PagePromo ')][.//h3[contains(@class, 'PagePromo-title')] and not(ancestor::div[contains(@class, 'HamburgerNavigation')])])[3]//div[contains(@class, 'PagePromo-description')]/a[contains(@class, 'Link')]/span[contains(@class, 'PagePromoContentIcons-text')]",
+      "pic": "(//div[contains(concat(' ', normalize-space(@class), ' '), ' PagePromo ')][.//h3[contains(@class, 'PagePromo-title')] and not(ancestor::div[contains(@class, 'HamburgerNavigation')])])[3]//div[contains(@class, 'PagePromo-media')]//img[contains(@class, 'Image')]",
+      "picCaption": "",
+      "author": "",
+      "tags": [],
+      "time": "",
+      "page-location": "main",
+      "manual_weight": 5
+    },
+    {
+      "main": "(//div[contains(concat(' ', normalize-space(@class), ' '), ' PagePromo ')][.//h3[contains(@class, 'PagePromo-title')] and not(ancestor::div[contains(@class, 'HamburgerNavigation')])])[4]",
+      "title": "(//div[contains(concat(' ', normalize-space(@class), ' '), ' PagePromo ')][.//h3[contains(@class, 'PagePromo-title')] and not(ancestor::div[contains(@class, 'HamburgerNavigation')])])[4]//h3[contains(@class, 'PagePromo-title')]/a[contains(@class, 'Link')]/span[contains(@class, 'PagePromoContentIcons-text')]",
+      "content_summary": "(//div[contains(concat(' ', normalize-space(@class), ' '), ' PagePromo ')][.//h3[contains(@class, 'PagePromo-title')] and not(ancestor::div[contains(@class, 'HamburgerNavigation')])])[4]//div[contains(@class, 'PagePromo-description')]/a[contains(@class, 'Link')]/span[contains(@class, 'PagePromoContentIcons-text')]",
+      "pic": "(//div[contains(concat(' ', normalize-space(@class), ' '), ' PagePromo ')][.//h3[contains(@class, 'PagePromo-title')] and not(ancestor::div[contains(@class, 'HamburgerNavigation')])])[4]//div[contains(@class, 'PagePromo-media')]//img[contains(@class, 'Image')]",
+      "picCaption": "",
+      "author": "",
+      "tags": [],
+      "time": "",
+      "page-location": "main",
+      "manual_weight": 4
+    },
+    {
+      "main": "(//div[contains(concat(' ', normalize-space(@class), ' '), ' PagePromo ')][.//h3[contains(@class, 'PagePromo-title')] and not(ancestor::div[contains(@class, 'HamburgerNavigation')])])[5]",
+      "title": "(//div[contains(concat(' ', normalize-space(@class), ' '), ' PagePromo ')][.//h3[contains(@class, 'PagePromo-title')] and not(ancestor::div[contains(@class, 'HamburgerNavigation')])])[5]//h3[contains(@class, 'PagePromo-title')]/a[contains(@class, 'Link')]/span[contains(@class, 'PagePromoContentIcons-text')]",
+      "content_summary": "(//div[contains(concat(' ', normalize-space(@class), ' '), ' PagePromo ')][.//h3[contains(@class, 'PagePromo-title')] and not(ancestor::div[contains(@class, 'HamburgerNavigation')])])[5]//div[contains(@class, 'PagePromo-description')]/a[contains(@class, 'Link')]/span[contains(@class, 'PagePromoContentIcons-text')]",
+      "pic": "(//div[contains(concat(' ', normalize-space(@class), ' '), ' PagePromo ')][.//h3[contains(@class, 'PagePromo-title')] and not(ancestor::div[contains(@class, 'HamburgerNavigation')])])[5]//div[contains(@class, 'PagePromo-media')]//img[contains(@class, 'Image')]",
+      "picCaption": "",
+      "author": "",
+      "tags": [],
+      "time": "",
+      "page-location": "main",
+      "manual_weight": 4
+    }
+  ],
+  "list": {
+    "container": "//body",
+    "item": ".//div[contains(concat(' ', normalize-space(@class), ' '), ' PagePromo ')][.//h3[contains(@class, 'PagePromo-title')] and not(ancestor::div[contains(@class, 'HamburgerNavigation')]) and not(ancestor::div[contains(@class, 'PagePromoFooter')])]",
+    "fields": {
+      "main": ".",
+      "title": ".//h3[contains(@class, 'PagePromo-title')]/a[contains(@class, 'Link')]/span[contains(@class, 'PagePromoContentIcons-text')]",
+      "content_summary": ".//div[contains(@class, 'PagePromo-description')]/a[contains(@class, 'Link')]/span[contains(@class, 'PagePromoContentIcons-text')]",
+      "pic": ".//div[contains(@class, 'PagePromo-media')]//img[contains(@class, 'Image')]",
+      "picCaption": "",
+      "author": "",
+      "tags": [],
+      "time": "",
+      "page-location": "main",
+      "manual_weight": 3
+    }
+  }
+}

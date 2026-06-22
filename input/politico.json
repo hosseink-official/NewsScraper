@@ -1,0 +1,82 @@
+{
+  "url": "https://www.politico.com/",
+  "wait_until": "load",
+  "data": [
+    {
+      "main": "(//section[contains(@class, 'media-item')])[1]",
+      "title": "(//section[contains(@class, 'media-item')])[1]//h3//a",
+      "content_summary": "",
+      "pic": "(//section[contains(@class, 'media-item')])[1]//img",
+      "picCaption": "",
+      "author": "",
+      "tags": [],
+      "time": "",
+      "page-location": "header",
+      "manual_weight": 10
+    },
+    {
+      "main": "(//section[contains(@class, 'media-item')])[2]",
+      "title": "(//section[contains(@class, 'media-item')])[2]//h3//a",
+      "content_summary": "",
+      "pic": "(//section[contains(@class, 'media-item')])[2]//img",
+      "picCaption": "",
+      "author": "",
+      "tags": [],
+      "time": "",
+      "page-location": "main",
+      "manual_weight": 9
+    },
+    {
+      "main": "(//section[contains(@class, 'media-item')])[3]",
+      "title": "(//section[contains(@class, 'media-item')])[3]//h3//a",
+      "content_summary": "",
+      "pic": "(//section[contains(@class, 'media-item')])[3]//img",
+      "picCaption": "",
+      "author": "",
+      "tags": [],
+      "time": "",
+      "page-location": "main",
+      "manual_weight": 8
+    },
+    {
+      "main": "(//section[contains(@class, 'media-item')])[4]",
+      "title": "(//section[contains(@class, 'media-item')])[4]//h3//a",
+      "content_summary": "",
+      "pic": "(//section[contains(@class, 'media-item')])[4]//img",
+      "picCaption": "",
+      "author": "",
+      "tags": [],
+      "time": "",
+      "page-location": "main",
+      "manual_weight": 7
+    },
+    {
+      "main": "(//section[contains(@class, 'media-item')])[5]",
+      "title": "(//section[contains(@class, 'media-item')])[5]//h3//a",
+      "content_summary": "",
+      "pic": "(//section[contains(@class, 'media-item')])[5]//img",
+      "picCaption": "",
+      "author": "",
+      "tags": [],
+      "time": "",
+      "page-location": "main",
+      "manual_weight": 6
+    }
+  ],
+  "list": {
+    "container": "//main",
+    "item": ".//section[contains(@class, 'media-item')]",
+    "fields": {
+      "main": ".",
+      "title": ".//h3//a",
+      "content_summary": ".//p[contains(@class, 'dek')]",
+      "pic": ".//img",
+      "picCaption": "",
+      "author": ".//*[contains(@class, 'vcard')]//a",
+      "tags": [],
+      "time": "",
+      "page-location": "main",
+      "manual_weight": 3
+    }
+  }
+}

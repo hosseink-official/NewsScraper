@@ -1,0 +1,82 @@
+{
+  "url": "https://www.huffingtonpost.co.uk/",
+  "wait_until": "load",
+  "data": [
+    {
+      "main": "(//div[contains(@class, 'card') and contains(@class, 'js-card')])[1]",
+      "title": "(//div[contains(@class, 'card') and contains(@class, 'js-card')])[1]//*[contains(@class, 'card__headline__text')]",
+      "content_summary": "",
+      "pic": "(//div[contains(@class, 'card') and contains(@class, 'js-card')])[1]//img[contains(@class, 'img-sized__img')]",
+      "picCaption": "",
+      "author": "",
+      "tags": [],
+      "time": "",
+      "page-location": "header",
+      "manual_weight": 10
+    },
+    {
+      "main": "(//div[contains(@class, 'card') and contains(@class, 'js-card')])[2]",
+      "title": "(//div[contains(@class, 'card') and contains(@class, 'js-card')])[2]//*[contains(@class, 'card__headline__text')]",
+      "content_summary": "",
+      "pic": "(//div[contains(@class, 'card') and contains(@class, 'js-card')])[2]//img[contains(@class, 'img-sized__img')]",
+      "picCaption": "",
+      "author": "",
+      "tags": [],
+      "time": "",
+      "page-location": "main",
+      "manual_weight": 9
+    },
+    {
+      "main": "(//div[contains(@class, 'card') and contains(@class, 'js-card')])[3]",
+      "title": "(//div[contains(@class, 'card') and contains(@class, 'js-card')])[3]//*[contains(@class, 'card__headline__text')]",
+      "content_summary": "",
+      "pic": "(//div[contains(@class, 'card') and contains(@class, 'js-card')])[3]//img[contains(@class, 'img-sized__img')]",
+      "picCaption": "",
+      "author": "",
+      "tags": [],
+      "time": "",
+      "page-location": "main",
+      "manual_weight": 8
+    },
+    {
+      "main": "(//div[contains(@class, 'card') and contains(@class, 'js-card')])[4]",
+      "title": "(//div[contains(@class, 'card') and contains(@class, 'js-card')])[4]//*[contains(@class, 'card__headline__text')]",
+      "content_summary": "",
+      "pic": "(//div[contains(@class, 'card') and contains(@class, 'js-card')])[4]//img[contains(@class, 'img-sized__img')]",
+      "picCaption": "",
+      "author": "",
+      "tags": [],
+      "time": "",
+      "page-location": "main",
+      "manual_weight": 7
+    },
+    {
+      "main": "(//div[contains(@class, 'card') and contains(@class, 'js-card')])[5]",
+      "title": "(//div[contains(@class, 'card') and contains(@class, 'js-card')])[5]//*[contains(@class, 'card__headline__text')]",
+      "content_summary": "",
+      "pic": "(//div[contains(@class, 'card') and contains(@class, 'js-card')])[5]//img[contains(@class, 'img-sized__img')]",
+      "picCaption": "",
+      "author": "",
+      "tags": [],
+      "time": "",
+      "page-location": "main",
+      "manual_weight": 6
+    }
+  ],
+  "list": {
+    "container": "//body",
+    "item": ".//div[contains(@class, 'card') and contains(@class, 'js-card')]",
+    "fields": {
+      "main": ".",
+      "title": ".//*[contains(@class, 'card__headline__text')]",
+      "content_summary": "",
+      "pic": ".//img[contains(@class, 'img-sized__img')]",
+      "picCaption": "",
+      "author": "",
+      "tags": [],
+      "time": "",
+      "page-location": "main",
+      "manual_weight": 3
+    }
+  }
+}

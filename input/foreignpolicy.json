@@ -1,0 +1,82 @@
+{
+  "url": "https://foreignpolicy.com/",
+  "wait_until": "load",
+  "data": [
+    {
+      "main": "(//div[contains(@class, 'excerpt-content')])[1]",
+      "title": "(//div[contains(@class, 'excerpt-content')])[1]//a[contains(@class, 'hed-heading')]/h3[contains(@class, 'hed')]",
+      "content_summary": "",
+      "pic": "(//div[contains(@class, 'excerpt-content')])[1]//figure[contains(@class, 'figure-image')]//img",
+      "picCaption": "",
+      "author": "",
+      "tags": [],
+      "time": "",
+      "page-location": "header",
+      "manual_weight": 10
+    },
+    {
+      "main": "(//div[contains(@class, 'excerpt-content')])[2]",
+      "title": "(//div[contains(@class, 'excerpt-content')])[2]//a[contains(@class, 'hed-heading')]/h3[contains(@class, 'hed')]",
+      "content_summary": "",
+      "pic": "(//div[contains(@class, 'excerpt-content')])[2]//figure[contains(@class, 'figure-image')]//img",
+      "picCaption": "",
+      "author": "",
+      "tags": [],
+      "time": "",
+      "page-location": "main",
+      "manual_weight": 9
+    },
+    {
+      "main": "(//div[contains(@class, 'excerpt-content')])[3]",
+      "title": "(//div[contains(@class, 'excerpt-content')])[3]//a[contains(@class, 'hed-heading')]/h3[contains(@class, 'hed')]",
+      "content_summary": "",
+      "pic": "(//div[contains(@class, 'excerpt-content')])[3]//figure[contains(@class, 'figure-image')]//img",
+      "picCaption": "",
+      "author": "",
+      "tags": [],
+      "time": "",
+      "page-location": "main",
+      "manual_weight": 8
+    },
+    {
+      "main": "(//div[contains(@class, 'excerpt-content')])[4]",
+      "title": "(//div[contains(@class, 'excerpt-content')])[4]//a[contains(@class, 'hed-heading')]/h3[contains(@class, 'hed')]",
+      "content_summary": "",
+      "pic": "(//div[contains(@class, 'excerpt-content')])[4]//figure[contains(@class, 'figure-image')]//img",
+      "picCaption": "",
+      "author": "",
+      "tags": [],
+      "time": "",
+      "page-location": "main",
+      "manual_weight": 7
+    },
+    {
+      "main": "(//div[contains(@class, 'excerpt-content')])[5]",
+      "title": "(//div[contains(@class, 'excerpt-content')])[5]//a[contains(@class, 'hed-heading')]/h3[contains(@class, 'hed')]",
+      "content_summary": "",
+      "pic": "(//div[contains(@class, 'excerpt-content')])[5]//figure[contains(@class, 'figure-image')]//img",
+      "picCaption": "",
+      "author": "",
+      "tags": [],
+      "time": "",
+      "page-location": "main",
+      "manual_weight": 6
+    }
+  ],
+  "list": {
+    "container": "//body",
+    "item": ".//div[contains(@class, 'excerpt-content')]",
+    "fields": {
+      "main": ".",
+      "title": ".//a[contains(@class, 'hed-heading')]/h3[contains(@class, 'hed')]",
+      "content_summary": "",
+      "pic": ".//figure[contains(@class, 'figure-image')]//img",
+      "picCaption": "",
+      "author": "",
+      "tags": [],
+      "time": "",
+      "page-location": "main",
+      "manual_weight": 3
+    }
+  }
+}

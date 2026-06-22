@@ -1,0 +1,82 @@
+{
+  "url": "https://www.usatoday.com/",
+  "wait_until": "load",
+  "data": [
+    {
+      "main": "(//div[@id='content']//a[contains(@href, '/story/')])[1]",
+      "title": "(//div[@id='content']//a[contains(@href, '/story/')])[1]//*[contains(@class, 'title')]",
+      "content_summary": "",
+      "pic": "(//div[@id='content']//a[contains(@href, '/story/')])[1]//picture//img",
+      "picCaption": "",
+      "author": "",
+      "tags": [],
+      "time": "",
+      "page-location": "header",
+      "manual_weight": 10
+    },
+    {
+      "main": "(//div[@id='content']//a[contains(@href, '/story/')])[2]",
+      "title": "(//div[@id='content']//a[contains(@href, '/story/')])[2]//*[contains(@class, 'title')]",
+      "content_summary": "",
+      "pic": "(//div[@id='content']//a[contains(@href, '/story/')])[2]//picture//img",
+      "picCaption": "",
+      "author": "",
+      "tags": [],
+      "time": "",
+      "page-location": "main",
+      "manual_weight": 9
+    },
+    {
+      "main": "(//div[@id='content']//a[contains(@href, '/story/')])[3]",
+      "title": "(//div[@id='content']//a[contains(@href, '/story/')])[3]//*[contains(@class, 'title')]",
+      "content_summary": "",
+      "pic": "(//div[@id='content']//a[contains(@href, '/story/')])[3]//picture//img",
+      "picCaption": "",
+      "author": "",
+      "tags": [],
+      "time": "",
+      "page-location": "main",
+      "manual_weight": 8
+    },
+    {
+      "main": "(//div[@id='content']//a[contains(@href, '/story/')])[4]",
+      "title": "(//div[@id='content']//a[contains(@href, '/story/')])[4]//*[contains(@class, 'title')]",
+      "content_summary": "",
+      "pic": "(//div[@id='content']//a[contains(@href, '/story/')])[4]//picture//img",
+      "picCaption": "",
+      "author": "",
+      "tags": [],
+      "time": "",
+      "page-location": "main",
+      "manual_weight": 7
+    },
+    {
+      "main": "(//div[@id='content']//a[contains(@href, '/story/')])[5]",
+      "title": "(//div[@id='content']//a[contains(@href, '/story/')])[5]//*[contains(@class, 'title')]",
+      "content_summary": "",
+      "pic": "(//div[@id='content']//a[contains(@href, '/story/')])[5]//picture//img",
+      "picCaption": "",
+      "author": "",
+      "tags": [],
+      "time": "",
+      "page-location": "main",
+      "manual_weight": 6
+    }
+  ],
+  "list": {
+    "container": "//div[@id='content']",
+    "item": ".//a[contains(@href, '/story/')]",
+    "fields": {
+      "main": ".",
+      "title": ".//*[contains(@class, 'title')]",
+      "content_summary": "",
+      "pic": ".//picture//img",
+      "picCaption": "",
+      "author": "",
+      "tags": [],
+      "time": "",
+      "page-location": "main",
+      "manual_weight": 3
+    }
+  }
+}

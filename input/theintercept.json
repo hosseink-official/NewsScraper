@@ -1,0 +1,21 @@
+{
+  "url": "https://theintercept.com/",
+  "wait_until": "load",
+  "data": [],
+  "list": {
+    "container": "//body",
+    "item": ".//article[contains(@class, 'content-card')]",
+    "fields": {
+      "main": ".",
+      "title": ".//h3",
+      "content_summary": "",
+      "pic": ".//img",
+      "picCaption": "",
+      "author": "",
+      "tags": [],
+      "time": "",
+      "page-location": "main",
+      "manual_weight": 3
+    }
+  }
+}

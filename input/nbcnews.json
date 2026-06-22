@@ -1,0 +1,82 @@
+{
+  "url": "https://www.nbcnews.com/",
+  "wait_until": "load",
+  "data": [
+    {
+      "main": "(//div[contains(@class, 'story-item') and contains(@class, 'multistory-item')])[1]",
+      "title": "(//div[contains(@class, 'story-item') and contains(@class, 'multistory-item')])[1]//h2[contains(@class, 'multistoryline__headline')]/a",
+      "content_summary": "",
+      "pic": "(//div[contains(@class, 'story-item') and contains(@class, 'multistory-item')])[1]//div[@data-testid='storyline-media-article']//picture//img",
+      "picCaption": "",
+      "author": "",
+      "tags": [],
+      "time": "",
+      "page-location": "header",
+      "manual_weight": 10
+    },
+    {
+      "main": "(//div[contains(@class, 'story-item') and contains(@class, 'multistory-item')])[2]",
+      "title": "(//div[contains(@class, 'story-item') and contains(@class, 'multistory-item')])[2]//h2[contains(@class, 'multistoryline__headline')]/a",
+      "content_summary": "",
+      "pic": "(//div[contains(@class, 'story-item') and contains(@class, 'multistory-item')])[2]//div[@data-testid='storyline-media-article']//picture//img",
+      "picCaption": "",
+      "author": "",
+      "tags": [],
+      "time": "",
+      "page-location": "main",
+      "manual_weight": 9
+    },
+    {
+      "main": "(//div[contains(@class, 'story-item') and contains(@class, 'multistory-item')])[3]",
+      "title": "(//div[contains(@class, 'story-item') and contains(@class, 'multistory-item')])[3]//h2[contains(@class, 'multistoryline__headline')]/a",
+      "content_summary": "",
+      "pic": "(//div[contains(@class, 'story-item') and contains(@class, 'multistory-item')])[3]//div[@data-testid='storyline-media-article']//picture//img",
+      "picCaption": "",
+      "author": "",
+      "tags": [],
+      "time": "",
+      "page-location": "main",
+      "manual_weight": 8
+    },
+    {
+      "main": "(//div[contains(@class, 'story-item') and contains(@class, 'multistory-item')])[4]",
+      "title": "(//div[contains(@class, 'story-item') and contains(@class, 'multistory-item')])[4]//h2[contains(@class, 'multistoryline__headline')]/a",
+      "content_summary": "",
+      "pic": "(//div[contains(@class, 'story-item') and contains(@class, 'multistory-item')])[4]//div[@data-testid='storyline-media-article']//picture//img",
+      "picCaption": "",
+      "author": "",
+      "tags": [],
+      "time": "",
+      "page-location": "main",
+      "manual_weight": 7
+    },
+    {
+      "main": "(//div[contains(@class, 'story-item') and contains(@class, 'multistory-item')])[5]",
+      "title": "(//div[contains(@class, 'story-item') and contains(@class, 'multistory-item')])[5]//h2[contains(@class, 'multistoryline__headline')]/a",
+      "content_summary": "",
+      "pic": "(//div[contains(@class, 'story-item') and contains(@class, 'multistory-item')])[5]//div[@data-testid='storyline-media-article']//picture//img",
+      "picCaption": "",
+      "author": "",
+      "tags": [],
+      "time": "",
+      "page-location": "main",
+      "manual_weight": 6
+    }
+  ],
+  "list": {
+    "container": "//body",
+    "item": ".//div[contains(@class, 'story-item') and contains(@class, 'multistory-item')]",
+    "fields": {
+      "main": ".",
+      "title": ".//h2[contains(@class, 'multistoryline__headline')]/a",
+      "content_summary": "",
+      "pic": ".//div[@data-testid='storyline-media-article']//picture//img",
+      "picCaption": "",
+      "author": "",
+      "tags": [],
+      "time": "",
+      "page-location": "main",
+      "manual_weight": 3
+    }
+  }
+}

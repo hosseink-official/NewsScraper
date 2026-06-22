@@ -1,0 +1,142 @@
+{
+    "url": "https://www.vox.com/",
+    "wait_until": "load",
+    "data": [
+        {
+            "main": "(//div[contains(@class, 'duet--content-cards--content-card')])[1]",
+            "title": "(//div[contains(@class, 'duet--content-cards--content-card')])[1]//a[contains(@class, 'fxw44b0')]",
+            "content_summary": "(//div[contains(@class, 'duet--content-cards--content-card')])[1]//p[contains(@class, 'duet--article--dangerously-set-cms-markup')]",
+            "pic": "(//div[contains(@class, 'duet--content-cards--content-card')])[1]//img[contains(@class, '_1ssnpw50')]",
+            "picCaption": "",
+            "author": "",
+            "tags": ["(//div[contains(@class, 'duet--content-cards--content-card')])[1]//div[contains(@class, 'xl4kb30')]//span"],
+            "time": "",
+            "page-location": "header",
+            "manual_weight": 10
+        },
+        {
+            "main": "(//div[contains(@class, 'duet--content-cards--content-card')])[2]",
+            "title": "(//div[contains(@class, 'duet--content-cards--content-card')])[2]//a[contains(@class, 'fxw44b0')]",
+            "content_summary": "(//div[contains(@class, 'duet--content-cards--content-card')])[2]//p[contains(@class, 'duet--article--dangerously-set-cms-markup')]",
+            "pic": "(//div[contains(@class, 'duet--content-cards--content-card')])[2]//img[contains(@class, '_1ssnpw50')]",
+            "picCaption": "",
+            "author": "",
+            "tags": ["(//div[contains(@class, 'duet--content-cards--content-card')])[2]//div[contains(@class, 'xl4kb30')]//span"],
+            "time": "",
+            "page-location": "main",
+            "manual_weight": 9
+        },
+        {
+            "main": "(//div[contains(@class, 'duet--content-cards--content-card')])[3]",
+            "title": "(//div[contains(@class, 'duet--content-cards--content-card')])[3]//a[contains(@class, 'fxw44b0')]",
+            "content_summary": "(//div[contains(@class, 'duet--content-cards--content-card')])[3]//p[contains(@class, 'duet--article--dangerously-set-cms-markup')]",
+            "pic": "(//div[contains(@class, 'duet--content-cards--content-card')])[3]//img[contains(@class, '_1ssnpw50')]",
+            "picCaption": "",
+            "author": "",
+            "tags": ["(//div[contains(@class, 'duet--content-cards--content-card')])[3]//div[contains(@class, 'xl4kb30')]//span"],
+            "time": "",
+            "page-location": "main",
+            "manual_weight": 8
+        },
+        {
+            "main": "(//div[contains(@class, 'duet--content-cards--content-card')])[4]",
+            "title": "(//div[contains(@class, 'duet--content-cards--content-card')])[4]//a[contains(@class, 'fxw44b0')]",
+            "content_summary": "(//div[contains(@class, 'duet--content-cards--content-card')])[4]//p[contains(@class, 'duet--article--dangerously-set-cms-markup')]",
+            "pic": "(//div[contains(@class, 'duet--content-cards--content-card')])[4]//img[contains(@class, '_1ssnpw50')]",
+            "picCaption": "",
+            "author": "",
+            "tags": ["(//div[contains(@class, 'duet--content-cards--content-card')])[4]//div[contains(@class, 'xl4kb30')]//span"],
+            "time": "",
+            "page-location": "main",
+            "manual_weight": 7
+        },
+        {
+            "main": "(//div[contains(@class, 'duet--content-cards--content-card')])[5]",
+            "title": "(//div[contains(@class, 'duet--content-cards--content-card')])[5]//a[contains(@class, 'fxw44b0')]",
+            "content_summary": "(//div[contains(@class, 'duet--content-cards--content-card')])[5]//p[contains(@class, 'duet--article--dangerously-set-cms-markup')]",
+            "pic": "(//div[contains(@class, 'duet--content-cards--content-card')])[5]//img[contains(@class, '_1ssnpw50')]",
+            "picCaption": "",
+            "author": "",
+            "tags": ["(//div[contains(@class, 'duet--content-cards--content-card')])[5]//div[contains(@class, 'xl4kb30')]//span"],
+            "time": "",
+            "page-location": "main",
+            "manual_weight": 6
+        },
+        {
+            "main": "(//div[contains(@class, 'duet--content-cards--content-card')])[6]",
+            "title": "(//div[contains(@class, 'duet--content-cards--content-card')])[6]//a[contains(@class, 'fxw44b0')]",
+            "content_summary": "(//div[contains(@class, 'duet--content-cards--content-card')])[6]//p[contains(@class, 'duet--article--dangerously-set-cms-markup')]",
+            "pic": "(//div[contains(@class, 'duet--content-cards--content-card')])[6]//img[contains(@class, '_1ssnpw50')]",
+            "picCaption": "",
+            "author": "",
+            "tags": ["(//div[contains(@class, 'duet--content-cards--content-card')])[6]//div[contains(@class, 'xl4kb30')]//span"],
+            "time": "",
+            "page-location": "main",
+            "manual_weight": 5
+        },
+        {
+            "main": "(//div[contains(@class, 'duet--content-cards--content-card')])[7]",
+            "title": "(//div[contains(@class, 'duet--content-cards--content-card')])[7]//a[contains(@class, 'fxw44b0')]",
+            "content_summary": "(//div[contains(@class, 'duet--content-cards--content-card')])[7]//p[contains(@class, 'duet--article--dangerously-set-cms-markup')]",
+            "pic": "(//div[contains(@class, 'duet--content-cards--content-card')])[7]//img[contains(@class, '_1ssnpw50')]",
+            "picCaption": "",
+            "author": "",
+            "tags": ["(//div[contains(@class, 'duet--content-cards--content-card')])[7]//div[contains(@class, 'xl4kb30')]//span"],
+            "time": "",
+            "page-location": "sidebar",
+            "manual_weight": 4
+        },
+        {
+            "main": "(//div[contains(@class, 'duet--content-cards--content-card')])[8]",
+            "title": "(//div[contains(@class, 'duet--content-cards--content-card')])[8]//a[contains(@class, 'fxw44b0')]",
+            "content_summary": "(//div[contains(@class, 'duet--content-cards--content-card')])[8]//p[contains(@class, 'duet--article--dangerously-set-cms-markup')]",
+            "pic": "(//div[contains(@class, 'duet--content-cards--content-card')])[8]//img[contains(@class, '_1ssnpw50')]",
+            "picCaption": "",
+            "author": "",
+            "tags": ["(//div[contains(@class, 'duet--content-cards--content-card')])[8]//div[contains(@class, 'xl4kb30')]//span"],
+            "time": "",
+            "page-location": "sidebar",
+            "manual_weight": 3
+        },
+        {
+            "main": "(//div[contains(@class, 'duet--content-cards--content-card')])[9]",
+            "title": "(//div[contains(@class, 'duet--content-cards--content-card')])[9]//a[contains(@class, 'fxw44b0')]",
+            "content_summary": "(//div[contains(@class, 'duet--content-cards--content-card')])[9]//p[contains(@class, 'duet--article--dangerously-set-cms-markup')]",
+            "pic": "(//div[contains(@class, 'duet--content-cards--content-card')])[9]//img[contains(@class, '_1ssnpw50')]",
+            "picCaption": "",
+            "author": "",
+            "tags": ["(//div[contains(@class, 'duet--content-cards--content-card')])[9]//div[contains(@class, 'xl4kb30')]//span"],
+            "time": "",
+            "page-location": "sidebar",
+            "manual_weight": 2
+        },
+        {
+            "main": "(//div[contains(@class, 'duet--content-cards--content-card')])[10]",
+            "title": "(//div[contains(@class, 'duet--content-cards--content-card')])[10]//a[contains(@class, 'fxw44b0')]",
+            "content_summary": "(//div[contains(@class, 'duet--content-cards--content-card')])[10]//p[contains(@class, 'duet--article--dangerously-set-cms-markup')]",
+            "pic": "(//div[contains(@class, 'duet--content-cards--content-card')])[10]//img[contains(@class, '_1ssnpw50')]",
+            "picCaption": "",
+            "author": "",
+            "tags": ["(//div[contains(@class, 'duet--content-cards--content-card')])[10]//div[contains(@class, 'xl4kb30')]//span"],
+            "time": "",
+            "page-location": "sidebar",
+            "manual_weight": 1
+        }
+    ],
+    "list": {
+        "container": "//div[contains(@class, 'duet--page-layout--homepage')]",
+        "item": ".//div[contains(@class, 'duet--content-cards--content-card')]",
+        "fields": {
+            "main": ".",
+            "title": ".//a[contains(@class, 'fxw44b0')]",
+            "content_summary": ".//p[contains(@class, 'duet--article--dangerously-set-cms-markup')]",
+            "pic": ".//img[contains(@class, '_1ssnpw50')]",
+            "picCaption": "",
+            "author": "",
+            "tags": [".//div[contains(@class, 'xl4kb30')]//span"],
+            "time": "",
+            "page-location": "main",
+            "manual_weight": 5
+        }
+    }
+}

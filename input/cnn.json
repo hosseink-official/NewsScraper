@@ -1,0 +1,82 @@
+{
+    "url": "https://edition.cnn.com/",
+    "wait_until": "load",
+    "data": [
+        {
+            "main": "(//li[contains(@class, 'card') and contains(@class, 'container__item')])[1]",
+            "title": "(//li[contains(@class, 'card') and contains(@class, 'container__item')])[1]//span[@data-editable='headline']",
+            "content_summary": "",
+            "pic": "(//li[contains(@class, 'card') and contains(@class, 'container__item')])[1]//div[contains(@class, 'image') and contains(@class, 'vossi-image')]/@data-url",
+            "picCaption": "",
+            "author": "",
+            "tags": [],
+            "time": "",
+            "page-location": "header",
+            "manual_weight": 10
+        },
+        {
+            "main": "(//li[contains(@class, 'card') and contains(@class, 'container__item')])[2]",
+            "title": "(//li[contains(@class, 'card') and contains(@class, 'container__item')])[2]//span[@data-editable='headline']",
+            "content_summary": "",
+            "pic": "(//li[contains(@class, 'card') and contains(@class, 'container__item')])[2]//div[contains(@class, 'image') and contains(@class, 'vossi-image')]/@data-url",
+            "picCaption": "",
+            "author": "",
+            "tags": [],
+            "time": "",
+            "page-location": "main",
+            "manual_weight": 9
+        },
+        {
+            "main": "(//li[contains(@class, 'card') and contains(@class, 'container__item')])[3]",
+            "title": "(//li[contains(@class, 'card') and contains(@class, 'container__item')])[3]//span[@data-editable='headline']",
+            "content_summary": "",
+            "pic": "(//li[contains(@class, 'card') and contains(@class, 'container__item')])[3]//div[contains(@class, 'image') and contains(@class, 'vossi-image')]/@data-url",
+            "picCaption": "",
+            "author": "",
+            "tags": [],
+            "time": "",
+            "page-location": "main",
+            "manual_weight": 8
+        },
+        {
+            "main": "(//li[contains(@class, 'card') and contains(@class, 'container__item')])[4]",
+            "title": "(//li[contains(@class, 'card') and contains(@class, 'container__item')])[4]//span[@data-editable='headline']",
+            "content_summary": "",
+            "pic": "(//li[contains(@class, 'card') and contains(@class, 'container__item')])[4]//div[contains(@class, 'image') and contains(@class, 'vossi-image')]/@data-url",
+            "picCaption": "",
+            "author": "",
+            "tags": [],
+            "time": "",
+            "page-location": "main",
+            "manual_weight": 7
+        },
+        {
+            "main": "(//li[contains(@class, 'card') and contains(@class, 'container__item')])[5]",
+            "title": "(//li[contains(@class, 'card') and contains(@class, 'container__item')])[5]//span[@data-editable='headline']",
+            "content_summary": "",
+            "pic": "(//li[contains(@class, 'card') and contains(@class, 'container__item')])[5]//div[contains(@class, 'image') and contains(@class, 'vossi-image')]/@data-url",
+            "picCaption": "",
+            "author": "",
+            "tags": [],
+            "time": "",
+            "page-location": "main",
+            "manual_weight": 6
+        }
+    ],
+    "list": {
+        "container": "//body",
+        "item": ".//li[contains(@class, 'card') and contains(@class, 'container__item')]",
+        "fields": {
+            "main": ".",
+            "title": ".//span[@data-editable='headline']",
+            "content_summary": "",
+            "pic": ".//div[contains(@class, 'image') and contains(@class, 'vossi-image')]/@data-url",
+            "picCaption": "",
+            "author": "",
+            "tags": [],
+            "time": "",
+            "page-location": "main",
+            "manual_weight": 3
+        }
+    }
+}

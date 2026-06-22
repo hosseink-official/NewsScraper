@@ -1,0 +1,82 @@
+{
+  "url": "https://nypost.com/",
+  "wait_until": "load",
+  "data": [
+    {
+      "main": "(//div[contains(@class, 'story') and contains(@class, 'story--')])[1]",
+      "title": "(//div[contains(@class, 'story') and contains(@class, 'story--')])[1]//*[contains(@class, 'story__headline')]/a",
+      "content_summary": "",
+      "pic": "(//div[contains(@class, 'story') and contains(@class, 'story--')])[1]//*[contains(@class, 'story__image')]//img",
+      "picCaption": "",
+      "author": "",
+      "tags": [],
+      "time": "",
+      "page-location": "header",
+      "manual_weight": 10
+    },
+    {
+      "main": "(//div[contains(@class, 'story') and contains(@class, 'story--')])[2]",
+      "title": "(//div[contains(@class, 'story') and contains(@class, 'story--')])[2]//*[contains(@class, 'story__headline')]/a",
+      "content_summary": "",
+      "pic": "(//div[contains(@class, 'story') and contains(@class, 'story--')])[2]//*[contains(@class, 'story__image')]//img",
+      "picCaption": "",
+      "author": "",
+      "tags": [],
+      "time": "",
+      "page-location": "main",
+      "manual_weight": 9
+    },
+    {
+      "main": "(//div[contains(@class, 'story') and contains(@class, 'story--')])[3]",
+      "title": "(//div[contains(@class, 'story') and contains(@class, 'story--')])[3]//*[contains(@class, 'story__headline')]/a",
+      "content_summary": "",
+      "pic": "(//div[contains(@class, 'story') and contains(@class, 'story--')])[3]//*[contains(@class, 'story__image')]//img",
+      "picCaption": "",
+      "author": "",
+      "tags": [],
+      "time": "",
+      "page-location": "main",
+      "manual_weight": 8
+    },
+    {
+      "main": "(//div[contains(@class, 'story') and contains(@class, 'story--')])[4]",
+      "title": "(//div[contains(@class, 'story') and contains(@class, 'story--')])[4]//*[contains(@class, 'story__headline')]/a",
+      "content_summary": "",
+      "pic": "(//div[contains(@class, 'story') and contains(@class, 'story--')])[4]//*[contains(@class, 'story__image')]//img",
+      "picCaption": "",
+      "author": "",
+      "tags": [],
+      "time": "",
+      "page-location": "main",
+      "manual_weight": 7
+    },
+    {
+      "main": "(//div[contains(@class, 'story') and contains(@class, 'story--')])[5]",
+      "title": "(//div[contains(@class, 'story') and contains(@class, 'story--')])[5]//*[contains(@class, 'story__headline')]/a",
+      "content_summary": "",
+      "pic": "(//div[contains(@class, 'story') and contains(@class, 'story--')])[5]//*[contains(@class, 'story__image')]//img",
+      "picCaption": "",
+      "author": "",
+      "tags": [],
+      "time": "",
+      "page-location": "main",
+      "manual_weight": 6
+    }
+  ],
+  "list": {
+    "container": "//body",
+    "item": ".//div[contains(@class, 'story') and contains(@class, 'story--')]",
+    "fields": {
+      "main": ".",
+      "title": ".//*[contains(@class, 'story__headline')]/a",
+      "content_summary": "",
+      "pic": ".//*[contains(@class, 'story__image')]//img",
+      "picCaption": "",
+      "author": "",
+      "tags": [],
+      "time": "",
+      "page-location": "main",
+      "manual_weight": 3
+    }
+  }
+}

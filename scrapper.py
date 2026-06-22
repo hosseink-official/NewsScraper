@@ -39,8 +39,9 @@ class SiteConfig:
     url: str
     selectors: list[dict[str, Any]] | dict[str, Any]
     list_config: dict[str, Any] | None = None
+    wait_until: str = "networkidle"
 
-input_path = sys.argv[1] if len(sys.argv) > 1 else "."
+input_path = sys.argv[1] if len(sys.argv) > 1 else "input"
 output_path = sys.argv[2] if len(sys.argv) > 2 else os.path.join('.', 'output')
 
 
@@ -132,6 +133,7 @@ class NewsScraper:
             url=raw["url"],
             selectors=raw.get("data", []),
             list_config=raw.get("list"),
+            wait_until=raw.get("wait_until", "networkidle"),
         )
 
     @staticmethod
@@ -140,8 +142,12 @@ class NewsScraper:
         if not els:
             return ""
         if field_name == "pic":
+            if isinstance(els[0], str):
+                return els[0].strip()
             return els[0].get("src", "").strip()
         if field_name == "link":
+            if isinstance(els[0], str):
+                return els[0].strip()
             return els[0].get("href", "").strip()
         return els[0].text_content().strip()
 
@@ -151,8 +157,12 @@ class NewsScraper:
         if not els:
             return ""
         if field_name == "pic":
+            if isinstance(els[0], str):
+                return els[0].strip()
             return els[0].get("src", "").strip()
         if field_name == "link":
+            if isinstance(els[0], str):
+                return els[0].strip()
             return els[0].get("href", "").strip()
         return els[0].text_content().strip()
 
@@ -321,7 +331,7 @@ class NewsScraper:
 
     async def get_data(self, config: SiteConfig, page) -> list[Article]:
         self._logger.info(f"Fetching {config.url}")
-        await page.goto(config.url, wait_until="networkidle", timeout=60000)
+        await page.goto(config.url, wait_until=config.wait_until, timeout=60000)
         await self._scroll_to_bottom(page)
         content = await page.content()
         tree = html.fromstring(content)
@@ -377,8 +387,12 @@ class NewsScraper:
     async def _save_json(self, articles: list[Article], config_name: str) -> None:
         os.makedirs(output_path, exist_ok=True)
         base_name = os.path.splitext(config_name)[0]
-        timestamp = __import__("datetime").datetime.now().strftime("%Y%m%d_%H%M%S")
-        out_file = os.path.join(output_path, f"{base_name}_{timestamp}.json")
+        now = __import__("datetime").datetime.now()
+        date_part = now.strftime("%Y%m%d")
+        timestamp = now.strftime("%Y%m%d_%H%M%S")
+        folder_path = os.path.join(output_path, f"{base_name}_{date_part}")
+        os.makedirs(folder_path, exist_ok=True)
+        out_file = os.path.join(folder_path, f"{base_name}_{timestamp}.json")
         data = [
             {
                 "index": a.index,

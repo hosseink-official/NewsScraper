@@ -1,0 +1,82 @@
+{
+  "url": "https://www.wired.com/",
+  "wait_until": "load",
+  "data": [
+    {
+      "main": "(//div[contains(@class, 'SummaryItemWrapper') and contains(@class, 'summary-item--article')])[1]",
+      "title": "(//div[contains(@class, 'SummaryItemWrapper') and contains(@class, 'summary-item--article')])[1]//h3[contains(@class, 'SummaryItemHedBase')]",
+      "content_summary": "",
+      "pic": "(//div[contains(@class, 'SummaryItemWrapper') and contains(@class, 'summary-item--article')])[1]//img[contains(@class, 'ResponsiveImageContainer')]",
+      "picCaption": "",
+      "author": "",
+      "tags": [],
+      "time": "",
+      "page-location": "header",
+      "manual_weight": 10
+    },
+    {
+      "main": "(//div[contains(@class, 'SummaryItemWrapper') and contains(@class, 'summary-item--article')])[2]",
+      "title": "(//div[contains(@class, 'SummaryItemWrapper') and contains(@class, 'summary-item--article')])[2]//h3[contains(@class, 'SummaryItemHedBase')]",
+      "content_summary": "",
+      "pic": "(//div[contains(@class, 'SummaryItemWrapper') and contains(@class, 'summary-item--article')])[2]//img[contains(@class, 'ResponsiveImageContainer')]",
+      "picCaption": "",
+      "author": "",
+      "tags": [],
+      "time": "",
+      "page-location": "main",
+      "manual_weight": 9
+    },
+    {
+      "main": "(//div[contains(@class, 'SummaryItemWrapper') and contains(@class, 'summary-item--article')])[3]",
+      "title": "(//div[contains(@class, 'SummaryItemWrapper') and contains(@class, 'summary-item--article')])[3]//h3[contains(@class, 'SummaryItemHedBase')]",
+      "content_summary": "",
+      "pic": "(//div[contains(@class, 'SummaryItemWrapper') and contains(@class, 'summary-item--article')])[3]//img[contains(@class, 'ResponsiveImageContainer')]",
+      "picCaption": "",
+      "author": "",
+      "tags": [],
+      "time": "",
+      "page-location": "main",
+      "manual_weight": 8
+    },
+    {
+      "main": "(//div[contains(@class, 'SummaryItemWrapper') and contains(@class, 'summary-item--article')])[4]",
+      "title": "(//div[contains(@class, 'SummaryItemWrapper') and contains(@class, 'summary-item--article')])[4]//h3[contains(@class, 'SummaryItemHedBase')]",
+      "content_summary": "",
+      "pic": "(//div[contains(@class, 'SummaryItemWrapper') and contains(@class, 'summary-item--article')])[4]//img[contains(@class, 'ResponsiveImageContainer')]",
+      "picCaption": "",
+      "author": "",
+      "tags": [],
+      "time": "",
+      "page-location": "main",
+      "manual_weight": 7
+    },
+    {
+      "main": "(//div[contains(@class, 'SummaryItemWrapper') and contains(@class, 'summary-item--article')])[5]",
+      "title": "(//div[contains(@class, 'SummaryItemWrapper') and contains(@class, 'summary-item--article')])[5]//h3[contains(@class, 'SummaryItemHedBase')]",
+      "content_summary": "",
+      "pic": "(//div[contains(@class, 'SummaryItemWrapper') and contains(@class, 'summary-item--article')])[5]//img[contains(@class, 'ResponsiveImageContainer')]",
+      "picCaption": "",
+      "author": "",
+      "tags": [],
+      "time": "",
+      "page-location": "main",
+      "manual_weight": 6
+    }
+  ],
+  "list": {
+    "container": "//body",
+    "item": ".//div[contains(@class, 'SummaryItemWrapper') and contains(@class, 'summary-item--article')]",
+    "fields": {
+      "main": ".",
+      "title": ".//h3[contains(@class, 'SummaryItemHedBase')]",
+      "content_summary": "",
+      "pic": ".//img[contains(@class, 'ResponsiveImageContainer')]",
+      "picCaption": "",
+      "author": "",
+      "tags": [],
+      "time": "",
+      "page-location": "main",
+      "manual_weight": 3
+    }
+  }
+}

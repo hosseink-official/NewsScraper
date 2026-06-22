@@ -1,0 +1,82 @@
+{
+  "url": "https://www.alternet.org/",
+  "wait_until": "load",
+  "data": [
+    {
+      "main": "(//article)[1]",
+      "title": "(//article)[1]//h2//a",
+      "content_summary": "",
+      "pic": "",
+      "picCaption": "",
+      "author": "",
+      "tags": [],
+      "time": "",
+      "page-location": "header",
+      "manual_weight": 10
+    },
+    {
+      "main": "(//article)[2]",
+      "title": "(//article)[2]//h2//a",
+      "content_summary": "",
+      "pic": "",
+      "picCaption": "",
+      "author": "",
+      "tags": [],
+      "time": "",
+      "page-location": "main",
+      "manual_weight": 9
+    },
+    {
+      "main": "(//article)[3]",
+      "title": "(//article)[3]//h2//a",
+      "content_summary": "",
+      "pic": "",
+      "picCaption": "",
+      "author": "",
+      "tags": [],
+      "time": "",
+      "page-location": "main",
+      "manual_weight": 8
+    },
+    {
+      "main": "(//article)[4]",
+      "title": "(//article)[4]//h2//a",
+      "content_summary": "",
+      "pic": "",
+      "picCaption": "",
+      "author": "",
+      "tags": [],
+      "time": "",
+      "page-location": "sidebar",
+      "manual_weight": 7
+    },
+    {
+      "main": "(//article)[5]",
+      "title": "(//article)[5]//h2//a",
+      "content_summary": "",
+      "pic": "",
+      "picCaption": "",
+      "author": "(//article)[5]//*[contains(@class, 'author') or contains(@class, 'byline')]//a",
+      "tags": [],
+      "time": "",
+      "page-location": "sidebar",
+      "manual_weight": 6
+    }
+  ],
+  "list": {
+    "container": "//div[contains(@class, 'widget')]",
+    "item": ".//article",
+    "fields": {
+      "main": ".",
+      "title": ".//h3//a | .//h2//a | .//h4//a",
+      "content_summary": "",
+      "pic": "",
+      "picCaption": "",
+      "author": "",
+      "tags": [],
+      "time": "",
+      "page-location": "main",
+      "manual_weight": 3
+    }
+  }
+}

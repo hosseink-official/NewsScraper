@@ -1,0 +1,142 @@
+{
+    "url": "https://www.theatlantic.com/world/",
+    "wait_until": "load",
+    "data": [
+        {
+            "main": "//article[contains(@class, 'Lede_root')]",
+            "title": "//article[contains(@class, 'Lede_root')]//a[contains(@class, 'Lede_titleLink')]",
+            "content_summary": "//article[contains(@class, 'Lede_root')]//p[contains(@class, 'Lede_dek')]",
+            "pic": "//article[contains(@class, 'Lede_root')]//img",
+            "picCaption": "",
+            "author": "//article[contains(@class, 'Lede_root')]//a[contains(@class, 'HomepageMetadata_author')]",
+            "tags": [],
+            "time": "",
+            "page-location": "header",
+            "manual_weight": 10
+        },
+        {
+            "main": "(//article[contains(@class, 'Offlede_article')])[1]",
+            "title": "(//article[contains(@class, 'Offlede_article')])[1]//a[contains(@class, 'Offlede_titleLink')]",
+            "content_summary": "",
+            "pic": "(//article[contains(@class, 'Offlede_article')])[1]//img",
+            "picCaption": "",
+            "author": "(//article[contains(@class, 'Offlede_article')])[1]//a[contains(@class, 'HomepageMetadata_author')]",
+            "tags": [],
+            "time": "",
+            "page-location": "main",
+            "manual_weight": 9
+        },
+        {
+            "main": "(//article[contains(@class, 'Offlede_article')])[2]",
+            "title": "(//article[contains(@class, 'Offlede_article')])[2]//a[contains(@class, 'Offlede_titleLink')]",
+            "content_summary": "",
+            "pic": "(//article[contains(@class, 'Offlede_article')])[2]//img",
+            "picCaption": "",
+            "author": "(//article[contains(@class, 'Offlede_article')])[2]//a[contains(@class, 'HomepageMetadata_author')]",
+            "tags": [],
+            "time": "",
+            "page-location": "main",
+            "manual_weight": 8
+        },
+        {
+            "main": "(//article[contains(@class, 'QuadBelt_article')])[1]",
+            "title": "(//article[contains(@class, 'QuadBelt_article')])[1]//a[contains(@class, 'QuadBelt_titleLink')]",
+            "content_summary": "(//article[contains(@class, 'QuadBelt_article')])[1]//p[contains(@class, 'QuadBelt_dek')]",
+            "pic": "(//article[contains(@class, 'QuadBelt_article')])[1]//img",
+            "picCaption": "",
+            "author": "(//article[contains(@class, 'QuadBelt_article')])[1]//a[contains(@class, 'HomepageMetadata_author')]",
+            "tags": [],
+            "time": "",
+            "page-location": "main",
+            "manual_weight": 7
+        },
+        {
+            "main": "(//article[contains(@class, 'QuadBelt_article')])[2]",
+            "title": "(//article[contains(@class, 'QuadBelt_article')])[2]//a[contains(@class, 'QuadBelt_titleLink')]",
+            "content_summary": "(//article[contains(@class, 'QuadBelt_article')])[2]//p[contains(@class, 'QuadBelt_dek')]",
+            "pic": "(//article[contains(@class, 'QuadBelt_article')])[2]//img",
+            "picCaption": "",
+            "author": "(//article[contains(@class, 'QuadBelt_article')])[2]//a[contains(@class, 'HomepageMetadata_author')]",
+            "tags": [],
+            "time": "",
+            "page-location": "main",
+            "manual_weight": 6
+        },
+        {
+            "main": "(//article[contains(@class, 'QuadBelt_article')])[3]",
+            "title": "(//article[contains(@class, 'QuadBelt_article')])[3]//a[contains(@class, 'QuadBelt_titleLink')]",
+            "content_summary": "(//article[contains(@class, 'QuadBelt_article')])[3]//p[contains(@class, 'QuadBelt_dek')]",
+            "pic": "(//article[contains(@class, 'QuadBelt_article')])[3]//img",
+            "picCaption": "",
+            "author": "(//article[contains(@class, 'QuadBelt_article')])[3]//a[contains(@class, 'HomepageMetadata_author')]",
+            "tags": [],
+            "time": "",
+            "page-location": "main",
+            "manual_weight": 5
+        },
+        {
+            "main": "(//article[contains(@class, 'QuadBelt_article')])[4]",
+            "title": "(//article[contains(@class, 'QuadBelt_article')])[4]//a[contains(@class, 'QuadBelt_titleLink')]",
+            "content_summary": "(//article[contains(@class, 'QuadBelt_article')])[4]//p[contains(@class, 'QuadBelt_dek')]",
+            "pic": "(//article[contains(@class, 'QuadBelt_article')])[4]//img",
+            "picCaption": "",
+            "author": "(//article[contains(@class, 'QuadBelt_article')])[4]//a[contains(@class, 'HomepageMetadata_author')]",
+            "tags": [],
+            "time": "",
+            "page-location": "sidebar",
+            "manual_weight": 4
+        },
+        {
+            "main": "(//article[contains(@class, 'SmallPromoItem_root')])[1]",
+            "title": "(//article[contains(@class, 'SmallPromoItem_root')])[1]//a[contains(@class, 'SmallPromoItem_titleLink')]",
+            "content_summary": "",
+            "pic": "(//article[contains(@class, 'SmallPromoItem_root')])[1]//img",
+            "picCaption": "",
+            "author": "(//article[contains(@class, 'SmallPromoItem_root')])[1]//a[contains(@class, 'HomepageMetadata_author')]",
+            "tags": [],
+            "time": "",
+            "page-location": "sidebar",
+            "manual_weight": 3
+        },
+        {
+            "main": "(//article[contains(@class, 'SmallPromoItem_root')])[2]",
+            "title": "(//article[contains(@class, 'SmallPromoItem_root')])[2]//a[contains(@class, 'SmallPromoItem_titleLink')]",
+            "content_summary": "",
+            "pic": "(//article[contains(@class, 'SmallPromoItem_root')])[2]//img",
+            "picCaption": "",
+            "author": "(//article[contains(@class, 'SmallPromoItem_root')])[2]//a[contains(@class, 'HomepageMetadata_author')]",
+            "tags": [],
+            "time": "",
+            "page-location": "sidebar",
+            "manual_weight": 2
+        },
+        {
+            "main": "(//article[contains(@class, 'SmallPromoItem_root')])[3]",
+            "title": "(//article[contains(@class, 'SmallPromoItem_root')])[3]//a[contains(@class, 'SmallPromoItem_titleLink')]",
+            "content_summary": "",
+            "pic": "(//article[contains(@class, 'SmallPromoItem_root')])[3]//img",
+            "picCaption": "",
+            "author": "(//article[contains(@class, 'SmallPromoItem_root')])[3]//a[contains(@class, 'HomepageMetadata_author')]",
+            "tags": [],
+            "time": "",
+            "page-location": "sidebar",
+            "manual_weight": 1
+        }
+    ],
+    "list": {
+        "container": "//main[@id='main-content']",
+        "item": ".//article[contains(@class, 'Latest_article') or contains(@class, 'Popular_listItem')]",
+        "fields": {
+            "main": ".",
+            "title": ".//a[contains(@class, 'titleLink') or contains(@class, 'Popular_titleLink')]",
+            "content_summary": "",
+            "pic": ".//img",
+            "picCaption": "",
+            "author": ".//a[contains(@class, 'HomepageMetadata_author')]",
+            "tags": [],
+            "time": ".//time[contains(@class, 'HomepageMetadata_datePublished')]",
+            "page-location": "main",
+            "manual_weight": 3
+        }
+    }
+}

@@ -1,0 +1,82 @@
+{
+    "url": "https://www.latimes.com/",
+    "wait_until": "load",
+    "data": [
+        {
+            "main": "(//div[contains(@class, 'promo') and contains(@class, 'promo-small')])[1]",
+            "title": "(//div[contains(@class, 'promo') and contains(@class, 'promo-small')])[1]//h2[contains(@class, 'promo-title')]/a[contains(@class, 'link')]",
+            "content_summary": "",
+            "pic": "(//div[contains(@class, 'promo') and contains(@class, 'promo-small')])[1]//img[contains(@class, 'image')]",
+            "picCaption": "",
+            "author": "",
+            "tags": [],
+            "time": "",
+            "page-location": "header",
+            "manual_weight": 10
+        },
+        {
+            "main": "(//div[contains(@class, 'promo') and contains(@class, 'promo-small')])[2]",
+            "title": "(//div[contains(@class, 'promo') and contains(@class, 'promo-small')])[2]//h2[contains(@class, 'promo-title')]/a[contains(@class, 'link')]",
+            "content_summary": "",
+            "pic": "(//div[contains(@class, 'promo') and contains(@class, 'promo-small')])[2]//img[contains(@class, 'image')]",
+            "picCaption": "",
+            "author": "",
+            "tags": [],
+            "time": "",
+            "page-location": "main",
+            "manual_weight": 9
+        },
+        {
+            "main": "(//div[contains(@class, 'promo') and contains(@class, 'promo-small')])[3]",
+            "title": "(//div[contains(@class, 'promo') and contains(@class, 'promo-small')])[3]//h2[contains(@class, 'promo-title')]/a[contains(@class, 'link')]",
+            "content_summary": "",
+            "pic": "(//div[contains(@class, 'promo') and contains(@class, 'promo-small')])[3]//img[contains(@class, 'image')]",
+            "picCaption": "",
+            "author": "",
+            "tags": [],
+            "time": "",
+            "page-location": "main",
+            "manual_weight": 8
+        },
+        {
+            "main": "(//div[contains(@class, 'promo') and contains(@class, 'promo-small')])[4]",
+            "title": "(//div[contains(@class, 'promo') and contains(@class, 'promo-small')])[4]//h2[contains(@class, 'promo-title')]/a[contains(@class, 'link')]",
+            "content_summary": "",
+            "pic": "(//div[contains(@class, 'promo') and contains(@class, 'promo-small')])[4]//img[contains(@class, 'image')]",
+            "picCaption": "",
+            "author": "",
+            "tags": [],
+            "time": "",
+            "page-location": "main",
+            "manual_weight": 7
+        },
+        {
+            "main": "(//div[contains(@class, 'promo') and contains(@class, 'promo-small')])[5]",
+            "title": "(//div[contains(@class, 'promo') and contains(@class, 'promo-small')])[5]//h2[contains(@class, 'promo-title')]/a[contains(@class, 'link')]",
+            "content_summary": "",
+            "pic": "(//div[contains(@class, 'promo') and contains(@class, 'promo-small')])[5]//img[contains(@class, 'image')]",
+            "picCaption": "",
+            "author": "",
+            "tags": [],
+            "time": "",
+            "page-location": "main",
+            "manual_weight": 6
+        }
+    ],
+    "list": {
+        "container": "//body",
+        "item": ".//div[contains(@class, 'promo') and contains(@class, 'promo-small')]",
+        "fields": {
+            "main": ".",
+            "title": ".//h2[contains(@class, 'promo-title')]/a[contains(@class, 'link')]",
+            "content_summary": "",
+            "pic": ".//img[contains(@class, 'image')]",
+            "picCaption": "",
+            "author": "",
+            "tags": [],
+            "time": "",
+            "page-location": "main",
+            "manual_weight": 3
+        }
+    }
+}

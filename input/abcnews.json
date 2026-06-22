@@ -1,0 +1,202 @@
+{
+  "url": "https://abcnews.go.com/",
+  "wait_until": "networkidle",
+  "data": [
+    {
+      "main": "(//div[@data-testid='prism-card'])[1]",
+      "title": "(//div[@data-testid='prism-card'])[1]//*[self::h2 or self::h3][contains(@id, 'headline')]",
+      "content_summary": "(//div[@data-testid='prism-card'])[1]//*[contains(@class, 'kgueg') or contains(@class, 'relatedLink')]",
+      "pic": "(//div[@data-testid='prism-card'])[1]//img",
+      "picCaption": "(//div[@data-testid='prism-card'])[1]//div[@data-testid='prism-indicator']",
+      "author": "",
+      "tags": [],
+      "time": "",
+      "page-location": "header",
+      "manual_weight": 10
+    },
+    {
+      "main": "(//div[@data-testid='prism-card'])[2]",
+      "title": "(//div[@data-testid='prism-card'])[2]//*[self::h2 or self::h3][contains(@id, 'headline')]",
+      "content_summary": "",
+      "pic": "(//div[@data-testid='prism-card'])[2]//img",
+      "picCaption": "",
+      "author": "",
+      "tags": [],
+      "time": "",
+      "page-location": "main",
+      "manual_weight": 7
+    },
+    {
+      "main": "(//div[@data-testid='prism-card'])[3]",
+      "title": "(//div[@data-testid='prism-card'])[3]//*[self::h2 or self::h3][contains(@id, 'headline')]",
+      "content_summary": "",
+      "pic": "(//div[@data-testid='prism-card'])[3]//img",
+      "picCaption": "",
+      "author": "",
+      "tags": [],
+      "time": "",
+      "page-location": "main",
+      "manual_weight": 5
+    },
+    {
+      "main": "(//div[@data-testid='prism-card'])[4]",
+      "title": "(//div[@data-testid='prism-card'])[4]//*[self::h2 or self::h3][contains(@id, 'headline')]",
+      "content_summary": "",
+      "pic": "(//div[@data-testid='prism-card'])[4]//img",
+      "picCaption": "",
+      "author": "",
+      "tags": [],
+      "time": "",
+      "page-location": "main",
+      "manual_weight": 5
+    },
+    {
+      "main": "(//div[@data-testid='prism-card'])[5]",
+      "title": "(//div[@data-testid='prism-card'])[5]//*[self::h2 or self::h3][contains(@id, 'headline')]",
+      "content_summary": "",
+      "pic": "(//div[@data-testid='prism-card'])[5]//img",
+      "picCaption": "",
+      "author": "",
+      "tags": [],
+      "time": "",
+      "page-location": "main",
+      "manual_weight": 5
+    },
+    {
+      "main": "(//div[@data-testid='prism-card'])[6]",
+      "title": "(//div[@data-testid='prism-card'])[6]//*[self::h2 or self::h3][contains(@id, 'headline')]",
+      "content_summary": "",
+      "pic": "(//div[@data-testid='prism-card'])[6]//img",
+      "picCaption": "",
+      "author": "",
+      "tags": [],
+      "time": "",
+      "page-location": "main",
+      "manual_weight": 5
+    },
+    {
+      "main": "(//div[@data-testid='prism-card'])[7]",
+      "title": "(//div[@data-testid='prism-card'])[7]//*[self::h2 or self::h3][contains(@id, 'headline')]",
+      "content_summary": "",
+      "pic": "(//div[@data-testid='prism-card'])[7]//img",
+      "picCaption": "",
+      "author": "",
+      "tags": [],
+      "time": "",
+      "page-location": "main",
+      "manual_weight": 5
+    },
+    {
+      "main": "(//div[@data-testid='prism-card'])[8]",
+      "title": "(//div[@data-testid='prism-card'])[8]//*[self::h2 or self::h3][contains(@id, 'headline')]",
+      "content_summary": "",
+      "pic": "(//div[@data-testid='prism-card'])[8]//img",
+      "picCaption": "",
+      "author": "",
+      "tags": [],
+      "time": "",
+      "page-location": "main",
+      "manual_weight": 4
+    },
+    {
+      "main": "(//div[@data-testid='prism-card'])[9]",
+      "title": "(//div[@data-testid='prism-card'])[9]//*[self::h2 or self::h3][contains(@id, 'headline')]",
+      "content_summary": "",
+      "pic": "(//div[@data-testid='prism-card'])[9]//img",
+      "picCaption": "",
+      "author": "",
+      "tags": [],
+      "time": "",
+      "page-location": "main",
+      "manual_weight": 4
+    },
+    {
+      "main": "(//div[@data-testid='prism-card'])[10]",
+      "title": "(//div[@data-testid='prism-card'])[10]//*[self::h2 or self::h3][contains(@id, 'headline')]",
+      "content_summary": "",
+      "pic": "(//div[@data-testid='prism-card'])[10]//img",
+      "picCaption": "",
+      "author": "",
+      "tags": [],
+      "time": "",
+      "page-location": "main",
+      "manual_weight": 4
+    },
+    {
+      "main": "(//div[@data-testid='prism-card'])[11]",
+      "title": "(//div[@data-testid='prism-card'])[11]//*[self::h2 or self::h3][contains(@id, 'headline')]",
+      "content_summary": "",
+      "pic": "(//div[@data-testid='prism-card'])[11]//img",
+      "picCaption": "",
+      "author": "",
+      "tags": [],
+      "time": "",
+      "page-location": "main",
+      "manual_weight": 4
+    },
+    {
+      "main": "(//div[@data-testid='prism-card'])[12]",
+      "title": "(//div[@data-testid='prism-card'])[12]//*[self::h2 or self::h3][contains(@id, 'headline')]",
+      "content_summary": "",
+      "pic": "(//div[@data-testid='prism-card'])[12]//img",
+      "picCaption": "",
+      "author": "",
+      "tags": [],
+      "time": "",
+      "page-location": "main",
+      "manual_weight": 4
+    },
+    {
+      "main": "(//div[@data-testid='prism-card'])[13]",
+      "title": "(//div[@data-testid='prism-card'])[13]//*[self::h2 or self::h3][contains(@id, 'headline')]",
+      "content_summary": "",
+      "pic": "(//div[@data-testid='prism-card'])[13]//img",
+      "picCaption": "",
+      "author": "",
+      "tags": [],
+      "time": "",
+      "page-location": "main",
+      "manual_weight": 4
+    },
+    {
+      "main": "(//div[@data-testid='prism-card'])[14]",
+      "title": "(//div[@data-testid='prism-card'])[14]//*[self::h2 or self::h3][contains(@id, 'headline')]",
+      "content_summary": "",
+      "pic": "(//div[@data-testid='prism-card'])[14]//img",
+      "picCaption": "",
+      "author": "",
+      "tags": [],
+      "time": "",
+      "page-location": "main",
+      "manual_weight": 4
+    },
+    {
+      "main": "(//div[@data-testid='prism-card'])[15]",
+      "title": "(//div[@data-testid='prism-card'])[15]//*[self::h2 or self::h3][contains(@id, 'headline')]",
+      "content_summary": "",
+      "pic": "(//div[@data-testid='prism-card'])[15]//img",
+      "picCaption": "",
+      "author": "",
+      "tags": [],
+      "time": "",
+      "page-location": "main",
+      "manual_weight": 4
+    }
+  ],
+  "list": {
+    "container": "//body",
+    "item": ".//div[@data-testid='prism-card']",
+    "fields": {
+      "main": ".",
+      "title": ".//*[self::h2 or self::h3][contains(@id, 'headline')]",
+      "content_summary": "",
+      "pic": ".//img",
+      "picCaption": "",
+      "author": "",
+      "tags": [],
+      "time": "",
+      "page-location": "main",
+      "manual_weight": 3
+    }
+  }
+}
